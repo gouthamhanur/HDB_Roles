@@ -1,0 +1,9 @@
+{ "role":{ "name": "DB_ROLE_FOR_CONFIG", "schema_roles":[ 
+  { 
+    "schema_reference":"logical_roles", 
+    "names": ["GRANT_SYSTEM_PRIVILE"] 
+  } 
+],"schema_privileges":[ 
+      { 
+        "reference":"logical_roles", 
+        "privileges":[ "SELECT" ]}]}}

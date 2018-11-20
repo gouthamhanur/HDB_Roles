@@ -1,0 +1,22 @@
+ID: Roles
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: HDB_ROLES_SYSTEM
+    type: hdb
+    path: HDB_ROLES_SYSTEM
+    requires:
+      - name: hdi_HDB_ROLES_SYSTEM
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: CONNECT_SECURITY
+resources:
+  - name: hdi_HDB_ROLES_SYSTEM
+    parameters:
+      config:
+        schema: ROLES_SCHEMA
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: CONNECT_SECURITY
+    type: org.cloudfoundry.existing-service
